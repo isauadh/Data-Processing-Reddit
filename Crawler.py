@@ -1,14 +1,14 @@
 import praw
 import json
 
-reddit = praw.Reddit(client_id='IFHDQg4dnEQ2AA', \
-                     client_secret='bVZAdZRh6XPPn6G0R-kChVsoEMo', \
-                     user_agent='tangocharlie1', \
+reddit = praw.Reddit(client_id='client id', \
+                     client_secret='client secret', \
+                     user_agent='user agent', \
                      username='isauadh', \
-                     password='s@ugaT1320')
+                     password='password')
 
 def Subreddit(name, limitTO):
-    print("working on {}".format(name))
+    print("Subreddit {}".format(name))
     subreddit = reddit.subreddit(name)
     submissions = subreddit.top(limit=limitTO)
     submissionCount = 0
@@ -34,7 +34,8 @@ def Subreddit(name, limitTO):
 
 
       updateTerminal(submissionCount, commentCount)
-
+      
+      # each file holds maximum of 200 submissions
       if(submissionCount % 200 == 0):
         writeData("{}-{}.txt".format(name,fcount),redditData)
         fcount += 1
