@@ -42,4 +42,4 @@ def Subreddit(name, limitToSubreddit, limitToRedditor):
     redditorPost(user, limitToRedditor)
   
 if __name__ == '__main__':
-  Subreddit('opiates', 2, 2)
+  Subreddit('opiates', None, None)
