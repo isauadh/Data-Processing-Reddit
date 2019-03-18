@@ -1,52 +1,45 @@
 import praw
 import json
 
-reddit = praw.Reddit(client_id='IFHDQg4dnEQ2AA', \
-                     client_secret='bVZAdZRh6XPPn6G0R-kChVsoEMo', \
-                     user_agent='tangocharlie1', \
+reddit = praw.Reddit(client_id='', \
+                     client_secret='', \
+                     user_agent='', \
                      username='isauadh', \
-                     password='s@ugaT1320')
+                     password='')
 
 def writeData(fp, data):
     outputfp = open(fp, "w")
     outputfp.write(json.dumps(data, sort_keys = True, indent = 4))
 
-def get_posts(userID):
+def redditorPost(userID, limitTo):
   redditorPost = {}
   redditorPost[userID] = []
   try:
-    submissions = reddit.redditor(userID).submissions.top(limit = 1)
+    submissions = reddit.redditor(userID).submissions.top(limit = limitTo)
     for submission in submissions:
       redditorPost[userID].append(submission.selftext)
   except:
     redditorPost[userID].append("404 Error")
   finally:
-    writeData("{}.txt".format(user),redditorPost)
+    writeData("{}.txt".format(userID),redditorPost)
 
-subreddit = reddit.subreddit('opiates')
-submissions = subreddit.top(limit = 1)
-redditorList = {}
-redditorList['redditors'] = []
-commenterList = {}
-commenterList['commenters'] = []
-
-for submission in submissions:
-  submission.comments.replace_more(limit= None)
-  redditorList['redditors'].append(str(submission.author))
-  for comment in submission.comments.list():
-    commenterList['commenters'].append(str(comment.author))
+def Subreddit(name, limitToSubreddit, limitToRedditor):
+  subreddit = reddit.subreddit(name)
+  submissions = subreddit.top(limit = limitToSubreddit)
+  redditors = {}
+  redditors['redditors'] = []
  
-
-newRedditorList = []
-newRedditorList = redditorList['redditors'] + commenterList['commenters']
-totalRedditorList = list(set(newRedditorList))
-redditorList['redditors'] = totalRedditorList
-writeData("{}.txt".format('Redditor'),redditorList)
-
-print(len(redditorList['redditors']))
-print(len(commenterList['commenters']))  
-print(len(newRedditorList))  
-print(len(totalRedditorList)) 
-for user in redditorList['redditors']:
-  print("Getting posts of user: " + user)
-  get_posts(user)
+  for submission in submissions:
+    submission.comments.replace_more(limit= limitToSubreddit)
+    redditors['redditors'].append(str(submission.author))
+    for comment in submission.comments.list():
+      redditors['redditors'].append(str(comment.author))
+  # get rid of repeated redditor
+  redditors['redditors'] = list(set(redditors['redditors']))
+   
+  for user in redditors['redditors']:
+    print("Submissions of : " + user)
+    redditorPost(user, limitToRedditor)
+  
+if __name__ == '__main__':
+  Subreddit('opiates', 2, 2)
