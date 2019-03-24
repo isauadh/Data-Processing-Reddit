@@ -11,8 +11,8 @@ def writeData(fp, data):
     outputfp.write(json.dumps(data, sort_keys = True, indent = 4))
 
 def Subreddit(name, limitTo):
-  subreddit = reddit.subreddit('opiates')
-  submissions = subreddit.top(limit = 1) 
+  subreddit = reddit.subreddit(name)
+  submissions = subreddit.top(limit = limitTo) 
   posts = {}
   
   for submission in submissions:
@@ -35,7 +35,7 @@ def Subreddit(name, limitTo):
         posts[str(comment.author)] = []
         posts[str(comment.author)].append(comment.body)
         
-  writeData("{}.txt".format('Post1'),posts)
+  writeData("{}.txt".format('Sort_Post_By_Author'),posts)
   
- if __name__ == '__main__':
+if __name__ == '__main__':
   Subreddit('opiates', None)
