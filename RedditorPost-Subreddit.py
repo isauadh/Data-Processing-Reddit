@@ -1,11 +1,11 @@
 import praw
 import json
 
-reddit = praw.Reddit(client_id='', \
-                     client_secret='', \
-                     user_agent='', \
+reddit = praw.Reddit(client_id='IFHDQg4dnEQ2AA', \
+                     client_secret='bVZAdZRh6XPPn6G0R-kChVsoEMo', \
+                     user_agent='tangocharlie1', \
                      username='isauadh', \
-                     password='')
+                     password='s@ugaT1320')
 
 def writeData(fp, data):
     outputfp = open(fp, "w")
