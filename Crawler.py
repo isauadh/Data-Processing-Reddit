@@ -1,11 +1,11 @@
 import praw
 import json
 
-reddit = praw.Reddit(client_id='client id', \
-                     client_secret='client secret', \
-                     user_agent='user agent', \
+reddit = praw.Reddit(client_id='IFHDQg4dnEQ2AA', \
+                     client_secret='bVZAdZRh6XPPn6G0R-kChVsoEMo', \
+                     user_agent='tangocharlie1', \
                      username='isauadh', \
-                     password='password')
+                     password='s@ugaT1320')
 
 def Subreddit(name, limitTO):
     print("Subreddit {}".format(name))
