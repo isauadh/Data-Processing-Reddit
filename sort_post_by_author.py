@@ -24,6 +24,7 @@ def Subreddit(name, limitTo):
     if flag_sub == 0:
       posts[str(submission.author)] = []
       posts[str(submission.author)].append(submission.selftext)
+    submission.comments.replace_more(limit= None)
     for comment in submission.comments.list():
       flag = 0
       for key in posts.keys():
