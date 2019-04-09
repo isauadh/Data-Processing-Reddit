@@ -97,5 +97,6 @@ if __name__ == '__main__':
   allPost = Subreddit('Subreddit_Name', None)
   # Please provide the directory name to store the gathered information
   makeDir('Directory_Name', allPost)
+  createDistribution(allPost)
   # Please provide the redditor name to view the time distribution of his/her posts in the given subreddit
   timeDistribution('Redditor_Name', allPost)       
