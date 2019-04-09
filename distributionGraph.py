@@ -42,7 +42,7 @@ def createDistribution(data):
         graphingData[key] = len(data[key][0]['post'])
     df = pd.DataFrame.from_dict(graphingData, orient = 'index', columns = ['count'])
     df['binned'] = pd.cut(df['count'], bins = 150)
-    print(df['binned'].value_counts().plot.bar(figsize =(20,10))
+    print(df['binned'].value_counts().plot.bar(figsize =(20,10)))
 
 # create a bar diagram to analyze time distribution of a redditor in a given subreddit
 def timeDistribution(authorName, data):
@@ -54,7 +54,7 @@ def timeDistribution(authorName, data):
     df1 = pd.DataFrame.from_dict(graphingData) 
     bins = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
     df1['binned'] = pd.cut(df1[authorName], bins = bins)
-    print(df1['binned'].value_counts().plot.bar(figsize=(20,10))
+    print(df1['binned'].value_counts().plot.bar(figsize=(20,10)))
 
 # gather posts, comments, and their posted time off the top 1k submissions of all time of a subreddit 
 # gathered information are sorted by redditor in the given subreddit
