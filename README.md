@@ -4,7 +4,7 @@ The project uses reddit API to collect data from subreddit 'Opiates' for the pur
 
 ## Crawler
 
-The crawler program is to collect data from a particular subreddit. Things like submissions, comments and their attributes can be collected through this program.
+The crawler program is collects top 1k of all time submissions and comments off the given subreddit.
 
 ## RedditorOfSubreddit
 
