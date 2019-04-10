@@ -44,8 +44,10 @@ def Subreddit(name, limitToSubreddit, limitToRedditor):
       redditors['redditors'].append(str(comment.author))
   # set will get rid of repeated redditors 
   redditors['redditors'] = list(set(redditors['redditors'])) 
+  writeData("{}.txt".format('RedditorList'), redditors)
   for user in redditors['redditors']:
     redditorPost(user, limitToRedditor)
   
 if __name__ == '__main__':
+  # Please provide the subreddit before running the program. You can also make changes to the 'None' limit parameters as your want.
   Subreddit('Subreddit_Name', None, None)
