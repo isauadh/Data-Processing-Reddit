@@ -16,7 +16,9 @@ This program goes through submissions and comments on a subreddit and sort them 
 
 ## distributionGraph.py
 
-This program will generate a distribution graph of the number of post in a given subreddit. Also, can generate time distribution of a redditor post in a given subreddit.
+This program will generate a distribution graph of the number of post in a given subreddit. Also, can generate time distribution of a redditor post in a given subreddit. 
+
+The program will create a directory with files containing submissions and comments of a redditor in a given subreddit. Filename will be the hidden version of the original redditor name.
 
 ## Authors
 
