@@ -4,15 +4,11 @@ The project uses reddit API to collect data from subreddit 'Opiates' for the pur
 
 ## Crawler
 
-The crawler program is collects top 1k of all time submissions and comments off the given subreddit.
+The crawler program collects maximun of top 1k of all time submissions and comments off the given subreddit.
 
-## RedditorOfSubreddit
+## Redditor/Submission&Comment
 
-This program is to collect redditors off the subreddit.
-
-## RedditorPost-Subreddit
-
-This program is to collect data related to redditor post. This program will collect all the submissions from the redditors in a subreddit.
+First, this program collects redditors on a given subreddit. Second, the program iterates through the list of redditors and gather their all time top submission and comments (maximum of 1k) on any subreddit throughout reddit.com.
 
 ## sort_post_by_author
 
