@@ -57,4 +57,5 @@ def writeData(fp, data):
     outputfp.write(json.dumps(data, sort_keys = True, indent = 4))
 
 if __name__ == '__main__':
-  Subreddit('opiates', None)
+  # Please provide the subreddit Name before running the program
+  Subreddit('Subreddit_Name', None)
