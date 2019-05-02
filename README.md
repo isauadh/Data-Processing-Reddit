@@ -20,6 +20,10 @@ This program will generate a distribution graph of the number of post in a given
 
 The program will create a directory with files containing submissions and comments of a redditor in a given subreddit. Filename will be the hidden version of the original redditor name.
 
+## Opiates.Zip
+
+The folder has been zipped because it consists files more than the GitHub Limit. This folder consists of three different files. The first CSV folder consists of a csv file for each redditor under the second Opiates folder. The run.py is a python program that parses through the opiates folder to create a csv folder. The csv folder contains filename as numbers to hide redditor name. The index can be found in index_dict under csv folder.
+
 ## Authors
 
 Saugat Adhikari
